@@ -29,9 +29,9 @@ multitenancy:
     mtapp:
         master:
             datasource:
-                url: jdbc:postgresql://db.experiment.extreme.com.co:5432/xtenant?useSSL=false
-                username: test
-                password: 3xtr3m3s3rv3r
+                url: jdbc:postgresql://localhost:5432/master_db?useSSL=false
+                username: postgres
+                password: admin123
                 driverClassName: org.postgresql.Driver
                 connectionTimeout: 20000
                 maxPoolSize: 250
