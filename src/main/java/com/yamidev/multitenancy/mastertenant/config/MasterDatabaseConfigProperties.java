@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.mastertenant;
+package com.yamidev.multitenancy.mastertenant.config;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
