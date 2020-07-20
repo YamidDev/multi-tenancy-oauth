@@ -1,6 +1,6 @@
-package com.yamidev.multitenancy.models.services;
+package com.yamidev.multitenancy.tenant.service;
 
-import com.yamidev.multitenancy.models.entity.Message;
+import com.yamidev.multitenancy.tenant.entity.Message;
 
 import java.util.List;
 

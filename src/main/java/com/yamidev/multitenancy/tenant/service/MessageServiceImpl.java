@@ -1,14 +1,14 @@
-package com.yamidev.multitenancy.models.services;
+package com.yamidev.multitenancy.tenant.service;
 
-import com.yamidev.multitenancy.models.dao.IMessageDao;
-import com.yamidev.multitenancy.models.entity.Message;
+import com.yamidev.multitenancy.tenant.entity.Message;
+import com.yamidev.multitenancy.tenant.repository.IMessageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MessageServiceImpl implements IMessageService{
+public class MessageServiceImpl implements IMessageService {
 
     @Autowired
     private IMessageDao repo;
