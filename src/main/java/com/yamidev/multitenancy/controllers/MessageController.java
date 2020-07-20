@@ -1,7 +1,7 @@
 package com.yamidev.multitenancy.controllers;
 
-import com.yamidev.multitenancy.models.entity.Message;
-import com.yamidev.multitenancy.models.services.MessageServiceImpl;
+import com.yamidev.multitenancy.tenant.entity.Message;
+import com.yamidev.multitenancy.tenant.service.MessageServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;

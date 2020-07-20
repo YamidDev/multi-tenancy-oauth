@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.models.entity;
+package com.yamidev.multitenancy.dto.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

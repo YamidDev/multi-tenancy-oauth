@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.models.entity;
+package com.yamidev.multitenancy.tenant.entity;
 
 
 import lombok.Data;

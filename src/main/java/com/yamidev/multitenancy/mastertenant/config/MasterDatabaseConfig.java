@@ -44,7 +44,7 @@ public class MasterDatabaseConfig {
         hikariDataSource.setJdbcUrl(masterDbProperties.getUrl());
         hikariDataSource.setDriverClassName(masterDbProperties.getDriverClassName());
         hikariDataSource.setPoolName(masterDbProperties.getPoolName());
-
+        // HikariCP settings
         hikariDataSource.setMaximumPoolSize(masterDbProperties.getMaxPoolSize());
         hikariDataSource.setMinimumIdle(masterDbProperties.getMinIdle());
         hikariDataSource.setConnectionTimeout(masterDbProperties.getConnectionTimeout());
@@ -57,12 +57,17 @@ public class MasterDatabaseConfig {
     @Bean(name = "masterEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean masterEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        // Set the master data source
         em.setDataSource(masterDataSource());
-        em.setPackagesToScan(new String[]{MasterTenant.class.getPackage().getName(),
-                                MasterTenantRepository.class.getPackage().getName()});
+        // The master tenant entity and repository need to be scanned
+        em.setPackagesToScan(new String[]{MasterTenant.class.getPackage().getName(), MasterTenantRepository.class.getPackage().getName()});
+        // Setting a name for the persistence unit as Spring sets it as
+        // 'default' if not defined
         em.setPersistenceUnitName("masterdb-persistence-unit");
+        // Setting Hibernate as the JPA provider
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
+        // Set the hibernate properties
         em.setJpaProperties(hibernateProperties());
         LOG.info("Setup of masterEntityManagerFactory succeeded.");
         return em;
@@ -80,6 +85,7 @@ public class MasterDatabaseConfig {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
+    //Hibernate configuration properties
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put(org.hibernate.cfg.Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");

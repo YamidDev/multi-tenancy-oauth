@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MasterTenantServiceImpl implements IMasterTenantService {
+public class MasterTenantServiceImpl implements MasterTenantService {
 
     private static final Logger LOG = LoggerFactory.getLogger(MasterTenantServiceImpl.class);
 

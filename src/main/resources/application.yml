@@ -1,30 +1,8 @@
-logging:
-    level:
-        org:
-            springframework:
-                ws: TRACE
-management:
-    endpoint:
-        health:
-            enabled: true
-            show-details: always
-    endpoints:
-        web:
-            exposure:
-                include: '*'
-server:
-    port: 5000
 spring:
-    security:
-        user:
-            name: admin
-    jpa:
-        database-platform: org.hibernate.dialect.PostgreSQLDialect
-        show-sql: true
-    main:
-        allow-bean-definition-overriding: true
     profiles:
         active: '@spring.profiles.active@'
+server:
+    port: 5000
 multitenancy:
     mtapp:
         master:
@@ -37,3 +15,4 @@ multitenancy:
                 maxPoolSize: 250
                 idleTimeout: 300000
                 minIdle: 5
+                poolName: masterdb-connection-pool

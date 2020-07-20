@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.models.entity;
+package com.yamidev.multitenancy.dto.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,5 +13,5 @@ public class UserLogin implements Serializable {
 
     private String userName;
     private String password;
-    private Integer tenantOrClientId;
+    private Long tenantOrClientId;
 }
