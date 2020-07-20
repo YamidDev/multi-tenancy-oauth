@@ -1,16 +1,10 @@
 package com.yamidev.multitenancy.mastertenant.config;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Configuration
-@ConfigurationProperties("multitenancy.mtappp.master.datasource")
+@ConfigurationProperties("multitenancy.mtapp.master.datasource")
 public class MasterDatabaseConfigProperties {
 
     private String url;
@@ -23,6 +17,7 @@ public class MasterDatabaseConfigProperties {
     private int minIdle;
     private String poolName;
 
+    //Initialization of HikariCP.
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -46,6 +41,87 @@ public class MasterDatabaseConfigProperties {
         builder.append(poolName);
         builder.append("]");
         return builder.toString();
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public MasterDatabaseConfigProperties setUrl(String url) {
+        this.url = url;
+        return this;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public MasterDatabaseConfigProperties setUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public MasterDatabaseConfigProperties setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public String getDriverClassName() {
+        return driverClassName;
+    }
+
+    public MasterDatabaseConfigProperties setDriverClassName(String driverClassName) {
+        this.driverClassName = driverClassName;
+        return this;
+    }
+
+    public long getConnectionTimeout() {
+        return connectionTimeout;
+    }
+
+    public MasterDatabaseConfigProperties setConnectionTimeout(long connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+        return this;
+    }
+
+    public int getMaxPoolSize() {
+        return maxPoolSize;
+    }
+
+    public MasterDatabaseConfigProperties setMaxPoolSize(int maxPoolSize) {
+        this.maxPoolSize = maxPoolSize;
+        return this;
+    }
+
+    public long getIdleTimeout() {
+        return idleTimeout;
+    }
+
+    public MasterDatabaseConfigProperties setIdleTimeout(long idleTimeout) {
+        this.idleTimeout = idleTimeout;
+        return this;
+    }
+
+    public int getMinIdle() {
+        return minIdle;
+    }
+
+    public MasterDatabaseConfigProperties setMinIdle(int minIdle) {
+        this.minIdle = minIdle;
+        return this;
+    }
+
+    public String getPoolName() {
+        return poolName;
+    }
+
+    public MasterDatabaseConfigProperties setPoolName(String poolName) {
+        this.poolName = poolName;
+        return this;
     }
 
 }

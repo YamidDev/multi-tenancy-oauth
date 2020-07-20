@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.auth;
+package com.yamidev.multitenancy.security;
 
 import java.lang.annotation.*;
 

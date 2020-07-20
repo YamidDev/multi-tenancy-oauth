@@ -1,4 +1,4 @@
-package com.yamidev.multitenancy.auth;
+package com.yamidev.multitenancy.security;
 
 import com.yamidev.multitenancy.tenant.entity.User;
 import com.yamidev.multitenancy.tenant.repository.UserDao;
@@ -16,7 +16,7 @@ import java.util.List;
 public class JwtUserDetailsService implements UserDetailsService {
 
     @Autowired
-    UserDao userRepository;
+    private UserDao userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {

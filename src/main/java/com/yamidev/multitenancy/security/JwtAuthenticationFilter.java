@@ -1,9 +1,9 @@
-package com.yamidev.multitenancy.auth;
+package com.yamidev.multitenancy.security;
 
 import com.yamidev.multitenancy.constant.JWTConstant;
 import com.yamidev.multitenancy.mastertenant.config.DBContextHolder;
 import com.yamidev.multitenancy.mastertenant.entity.MasterTenant;
-import com.yamidev.multitenancy.mastertenant.service.IMasterTenantService;
+import com.yamidev.multitenancy.mastertenant.service.MasterTenantService;
 import com.yamidev.multitenancy.util.JwtTokenUtil;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
@@ -14,6 +14,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 
+@Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
@@ -30,7 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
     @Autowired
-    IMasterTenantService masterTenantService;
+    MasterTenantService masterTenantService;
 
 
     @Override

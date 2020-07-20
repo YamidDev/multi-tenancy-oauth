@@ -13,5 +13,5 @@ public class UserLogin implements Serializable {
 
     private String userName;
     private String password;
-    private Integer tenantOrClientId;
+    private Long tenantOrClientId;
 }

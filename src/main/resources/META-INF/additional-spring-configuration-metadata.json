@@ -1,0 +1,49 @@
+{
+  "properties": [
+    {
+      "name": "multitenancy.mtapp.master.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.url."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.username."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.password."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.connectionTimeout",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.connectionTimeout."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.maxPoolSize",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.maxPoolSize."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.idleTimeout",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.idleTimeout."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.minIdle",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.minIdle."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.poolName",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.poolName."
+    },
+    {
+      "name": "multitenancy.mtapp.master.datasource.driver-class-name",
+      "type": "java.lang.String",
+      "description": "Description for multitenancy.mtapp.master.datasource.driver-class-name."
+    }
+  ]
+}

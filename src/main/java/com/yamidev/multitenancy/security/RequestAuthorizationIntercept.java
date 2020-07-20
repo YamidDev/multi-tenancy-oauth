@@ -1,8 +1,8 @@
-package com.yamidev.multitenancy.auth;
+package com.yamidev.multitenancy.security;
 
 
 import com.yamidev.multitenancy.mastertenant.config.DBContextHolder;
-import com.yamidev.multitenancy.mastertenant.service.IMasterTenantService;
+import com.yamidev.multitenancy.mastertenant.service.MasterTenantService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -23,9 +23,9 @@ public class RequestAuthorizationIntercept {
     ApplicationContext applicationContext;
 
     @Autowired
-    IMasterTenantService masterTenantService;
+    MasterTenantService masterTenantService;
 
-    @Around("@annotation(com.yamidev.multitenancy.auth.RequestAuthorization)")
+    @Around("@annotation(com.yamidev.multitenancy.security.RequestAuthorization)")
     public Object checkPermission(ProceedingJoinPoint pjp) throws Throwable {
         UserTenantInformation tenantInformation = applicationContext.getBean(UserTenantInformation.class);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
